@@ -6,7 +6,8 @@ class MainController < ApplicationController
   # render layout: 'custome'
 
   def welcome
-    @name = 'Cody!'
-    render layout: 'custome'
+    @name = 'CodigoFacilito'
+    # render layout: 'custome'
   end
+
 end
