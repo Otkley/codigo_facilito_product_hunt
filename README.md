@@ -5,4 +5,4 @@
 * Node version
 18.0.0
 * Database
-Sqlite
+Sqlite3
