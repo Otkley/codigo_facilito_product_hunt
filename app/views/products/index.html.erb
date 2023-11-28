@@ -1,0 +1,14 @@
+<section class="relative">
+  <div class="container px-4 mx-auto">
+    <div class="max-w-3xl mb-20 mx-auto text-center">
+      <h2 class="mt-8 mb-10 text-4xl font-semibold font-heading">Productos más populares 🦄</h2>
+    </div>
+    <div class="flex flex-wrap -m-3 mb-16">
+      <%# renderizamos un parcial llamado product y con collection le decimos que por cada product que exista dentro de products, se llamara 1 parcial. 1 parcial por c/u. ej: como tarjetas. Y dentro del parcial tenemos el objeto product %>
+      <%= render partial: 'product', collection: @products %>
+    </div>
+    <div class="text-center">
+      <a class="px-6 py-4 text-sm text-white font-semibold bg-red-400 hover:bg-red">View More Products</a>
+    </div>
+  </div>
+</section>
