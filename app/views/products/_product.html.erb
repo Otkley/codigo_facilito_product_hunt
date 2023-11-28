@@ -5,8 +5,8 @@
               Desarrollo de Software
             </span>
         </div>
-        <span class="inline-block mb-4 text-xs text-gray-500"><%= product.created_at %></span>
+        <span class="inline-block mb-4 text-xs text-gray-500"><%= date_format(product.created_at) %></span>
         <h2 class="mb-4 text-2xl font-semibold font-heading"><%= product.nombre %></h2>
-        <p class="mb-4 text-gray-500 leading-relaxed"><%= product.description %></p>
+        <p class="mb-4 text-gray-500 leading-relaxed"><%= simple_description(product.description) %></p>
     </div>
 </div>
