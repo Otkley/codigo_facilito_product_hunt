@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   # metodo que recibe un simbolo a ejecutar antes de las acciones que van dentro del parametro only pasados como simbolo
-  before_action :set_product, only: [:show, :edit, :update]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
     @products = Product.where(visible: true).order('id DESC')
@@ -36,6 +36,13 @@ class ProductsController < ApplicationController
       #renderizamos la vista new, y con el status le hacemos saber al navegador que la peticion, no fue procesada
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    # metodo destroy busca eliminar el registro de la base de datos
+    @product.destroy
+
+    redirect_to products_path, status: :see_other, notice: 'El producto se elimino de forma exitosa.'
   end
 
   private

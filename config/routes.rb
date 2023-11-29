@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   get 'products/:id/edit', to: 'products#edit', as: :edit_product
   patch 'products/:id', to: 'products#update'
   post 'products', to: 'products#create'
+  delete 'products/:id, to: 'products#destroy 
 
-  un resources creara las rutas para un CRUD completo acorde al controlador
+  La ruta destroy solo podra ser accedida con el metodo HTTP delete
+
+  un resources creara las rutas para un CRUD completo (8 rutas) pasandole el controlador como simbolo
   Verbos HTTP    Acciones
   -get            #index
   -post           #create
@@ -17,7 +20,10 @@ Rails.application.routes.draw do
   -get            #edit
   -get            #show
   -patch          #update
+  -put            #update
   -delete         #destroy
+
+  El product_path sirve tanto para ver, actualizar o eliminar, el cambio es el verbo HTTP
 =end
 
   resources :products
