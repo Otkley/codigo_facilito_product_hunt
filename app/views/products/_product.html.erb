@@ -8,5 +8,7 @@
         <span class="inline-block mb-4 text-xs text-gray-500"><%= date_format(product.created_at) %></span>
         <h2 class="mb-4 text-2xl font-semibold font-heading"><%= product.nombre %></h2>
         <p class="mb-4 text-gray-500 leading-relaxed"><%= simple_description(product.description) %></p>
+        <%# al pasarle la ruta product como lo tenemos registrado en nuestras rutas, ira directamente al show /product/:id, as: :product %>
+        <%= link_to 'Conoce mas', product, class: "text-lg font-medium text-red-500 underline hover:no-underline" %>
     </div>
 </div>
