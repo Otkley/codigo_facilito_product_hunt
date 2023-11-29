@@ -1,0 +1,6 @@
+<section>
+  <%# la variable flash es la que tendra todos los mensajes que vienen del controlador %>
+  <% flash.each do |type, msg| %>
+    <%= render partial: 'partials/message', locals: {index: type, message: msg} %>
+  <% end %>
+</section>
