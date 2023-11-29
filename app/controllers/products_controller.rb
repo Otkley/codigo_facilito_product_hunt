@@ -48,7 +48,10 @@ class ProductsController < ApplicationController
   private
 
   def set_product
-    @product = Product.find(params[:id])
+    # @product = Product.find(params[:id])
+    
+    # de esta forma usamos la gema friendly y mostraremos su friendly en el url tomandolo del modelo aunque buscamos por detras por el id
+    @product = Product.friendly.find(params[:id])
   end
 
   def product_params

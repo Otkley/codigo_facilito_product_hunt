@@ -8,8 +8,15 @@
 #  visible     :boolean          default(TRUE)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  slug        :string
 #
 class Product < ApplicationRecord
+  # le indicamos a RoR que generaremos el slug del objeto a partir del campo nombre
+  # annotate --models
+  # Slug: string unico q reemplaza id por temas de seguridad no exponer data en la ruta-friendly_id gem
+  extend FriendlyId
+  friendly_id :nombre, use: :slugged
+
   # Valicacion: mecanismo de reglas para proteger los registros de nuestra base de datos
 
   # metodo validates recibe como primer argumento como simbolo el atributo a validar y despues definir el tipo de validación a aplicar
