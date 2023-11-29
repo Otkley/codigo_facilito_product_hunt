@@ -9,11 +9,16 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.create!(product_params)
+    @product = Product.create(product_params)
 
-    # notice es el parametro con el cual nosotros enviamos mensajes a la vista
-    # helper_method: redirect_to vista/path, argumento:
-    redirect_to products_path, notice: "El producto se creo de forma exitosa."
+    if @product.persisted?
+      # notice es el parametro con el cual nosotros enviamos mensajes a la vista
+      # helper_method: redirect_to vista/path, argumento:
+      redirect_to products_path, notice: "El producto se creo de forma exitosa."
+    else
+      #renderizamos la vista new, y con el status le hacemos saber al navegador que la peticion, no fue procesada
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
