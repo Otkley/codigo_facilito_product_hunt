@@ -26,7 +26,12 @@ Rails.application.routes.draw do
   El product_path sirve tanto para ver, actualizar o eliminar, el cambio es el verbo HTTP
 =end
 
-  resources :products
+  resources :products do
+    # rutas que le pertenecen a products fuera del CRUD
+    # aqui le decimos que esta ruta le pertenecera a la colleccion de products como simbolo al metodo on:
+    get 'search', on: :collection # al hacer esto RoR de manera automatica generara la ruta products/search -> products#search
+  end
+
 
   root "main#welcome"
 end

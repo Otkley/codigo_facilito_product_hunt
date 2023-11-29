@@ -45,6 +45,11 @@ class ProductsController < ApplicationController
     redirect_to products_path, status: :see_other, notice: 'El producto se elimino de forma exitosa.'
   end
 
+  def search
+    @q = params[:q]
+    @products = Product.where("nombre LIKE ?", "%#{@q}%").where(visible: true)
+  end
+
   private
 
   def set_product
