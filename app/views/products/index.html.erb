@@ -8,7 +8,12 @@
       <%= render partial: 'product', collection: @products %>
     </div>
     <div class="text-center">
-      <a class="px-6 py-4 text-sm text-white font-semibold bg-red-400 hover:bg-red">View More Products</a>
+      <%# preguntamos si hay una siguiente pagina o es la ultima %>
+      <% if @products.next_page.present? %>
+        <%# un boton link_to pasandole de path el next page de products y si es la ultima ya no se mostrara %>
+        <%# aqui @products ya viene filtrado con pagination y este trae el metodo next_page ya que ya vienen las pages armadas por pagination %>
+        <%= link_to 'Ver mas productos', products_path(page: @products.next_page), class:"mb-4 px-6 py-4 text-sm text-white font-semibold bg-red-400 hover:bg-red-300 rounded transition duration-200"%>
+      <% end %>
     </div>
   </div>
 </section>
