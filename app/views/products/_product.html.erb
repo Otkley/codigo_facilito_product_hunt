@@ -4,6 +4,7 @@
             <span class="absolute top-0 right-0 mt-4 mr-4 text-xs text-white px-2 py-1 font-semibold bg-gray-600 bg-opacity-100 rounded-md uppercase">
               Desarrollo de Software
             </span>
+            <%= image_tag product.image, class:"w-full h-full object-cover rounded-lg" %> 
         </div>
         <span class="inline-block mb-4 text-xs text-gray-500"><%= date_format(product.created_at) %></span>
         <h2 class="mb-4 text-2xl font-semibold font-heading"><%= product.nombre %></h2>

@@ -28,4 +28,7 @@ class Product < ApplicationRecord
   validates :description, presence: { message: "La descripcion es requerida."}
 
   validates :nombre, length: {maximum: 200, minimum: 2}
+
+  # con esto decimos que producto tendra un archivo, en este caso image y dependencia: destroy
+  has_one_attached :image, :dependent => :destroy
 end
