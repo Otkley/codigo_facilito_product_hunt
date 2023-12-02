@@ -63,6 +63,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:nombre, :description, :visible, :image)
+    # category_ids seran los ids de los checkboxes como es una colleccion, se coloca asi category_ids:[]
+    params.require(:product).permit(:nombre, :description, :visible, :image, category_ids:[])
   end
 end

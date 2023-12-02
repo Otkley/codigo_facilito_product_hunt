@@ -64,4 +64,14 @@ irb(main):015> product.categories << last_category
   updated_at: Sat, 02 Dec 2023 02:11:43.239922000 UTC +00:00>]
 irb(main):016> 
 =end 
+
+ # le indicamos a ActiveRecord que estamos aceptando atributos anidados de la realcion con :categories
+  accepts_nested_attributes_for :categories
+
+  def category_default
+    # return self.categories.first.name if self.categories.any?
+    return categories.first.name if categories.any?
+
+    'Sin Categoria'
+  end
 end
