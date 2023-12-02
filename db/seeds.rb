@@ -10,3 +10,7 @@ require 'faker'
   )
 
 end
+
+Category.create(name: "Desarrollo de software")
+Category.create(name: "Desarrollo movil")
+Category.create(name: "Ruby on Rails")

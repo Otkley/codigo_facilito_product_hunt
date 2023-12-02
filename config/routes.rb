@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
 =begin
   # get 'products/index'
   get 'products', to: 'products#index'
