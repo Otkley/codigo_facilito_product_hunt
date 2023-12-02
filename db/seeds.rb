@@ -1,6 +1,7 @@
 require 'faker'
 
 # rails db:setup
+# rails db:seed
 
 100.times do
 
