@@ -10,4 +10,8 @@
 #
 class Comment < ApplicationRecord
   belongs_to :product
+
+  # tiene muchos votes como votable
+  # Comment.first.votes
+  has_many :votes, as: :votable
 end
