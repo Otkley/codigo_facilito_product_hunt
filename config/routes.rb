@@ -32,6 +32,7 @@ Rails.application.routes.draw do
     # aqui le decimos que esta ruta le pertenecera a la colleccion de products como simbolo al metodo on:
     get 'search', on: :collection # al hacer esto RoR de manera automatica generara la ruta products/search -> products#search
     resources :comments, only: [:create] # con esto RoR sabe que las rutas de comments le pertenecen a products y solo estamos creando la ruta para create
+    resources :votes, only: [:create] # con esto RoR sabe que las rutas de votes le pertenecen a products y solo estamos creando la ruta para create
   end
 
 
