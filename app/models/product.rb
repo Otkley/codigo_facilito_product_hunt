@@ -72,6 +72,10 @@ irb(main):016>
   # Product.first.votes
   has_many :votes, as: :votable
 
+  # expresiones lambda las cuales nos permiten abstraer consultas para utilizarlas en un futuro varias veces
+  # metodo scope, definimos su nombre y segundo argumento la condición a traves de una expresion lmabda
+  scope :visible, -> { where(visible: true) }
+
  # le indicamos a ActiveRecord que estamos aceptando atributos anidados de la realcion con :categories
   accepts_nested_attributes_for :categories
 
