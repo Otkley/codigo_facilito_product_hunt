@@ -68,10 +68,6 @@ irb(main):016>
   # indicamos que product tiene muchos comentarios
   has_many :comments, -> { order('id DESC') } # esto para ordenar los comentarios
 
-  # tiene muchos votes como votable
-  # Product.first.votes
-  has_many :votes, as: :votable
-
  # le indicamos a ActiveRecord que estamos aceptando atributos anidados de la realcion con :categories
   accepts_nested_attributes_for :categories
 
