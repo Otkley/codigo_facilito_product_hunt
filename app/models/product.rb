@@ -33,7 +33,7 @@ class Product < ApplicationRecord
   has_one_attached :image, :dependent => :destroy
 
   # relacion muchos a muchos con category por medio de product_categories
-  has_many :product_categories
+  has_many :product_categories, :dependent => :destroy
 =begin
 Product.last.product_categories.first.category a Product.categories
 
@@ -66,11 +66,11 @@ irb(main):016>
 =end 
 
   # indicamos que product tiene muchos comentarios
-  has_many :comments, -> { order('id DESC') } # esto para ordenar los comentarios
+  has_many :comments, -> { order('id DESC') }, :dependent => :destroy # esto para ordenar los comentarios
 
   # tiene muchos votes como votable
   # Product.first.votes
-  has_many :votes, as: :votable
+  has_many :votes, as: :votable, :dependent => :destroy
 
   # expresiones lambda las cuales nos permiten abstraer consultas para utilizarlas en un futuro varias veces
   # metodo scope, definimos su nombre y segundo argumento la condición a traves de una expresion lmabda
