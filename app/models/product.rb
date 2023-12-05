@@ -81,4 +81,19 @@ irb(main):016>
 
     'Sin Categoria'
   end
+
+  # metodo de clase para llamar a los productos mas populares
+  def self.populars
+    # hacemos un join a la tabla votes donde buscamos los productos que tengan por lo menos 1 o mas votos
+    #joins(:votes)
+    # hacemos un left join para incluir a productos que no tengan ni 1 solo voto
+    joins("LEFT JOIN votes ON votes.votable_id = products.id AND votes.votable_type = 'Product'")
+    # seleccionamos todos los campos de products y el total de votes lo guardamos en la variable total
+    .select("products.*, count(votes.id) as total")
+    # los agrupamos
+    # .group(:product)
+    .group('products.id')
+    # los ordenamos por la variable total de manera descendente
+    .order('total DESC')
+  end
 end

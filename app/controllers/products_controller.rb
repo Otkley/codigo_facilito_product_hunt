@@ -6,7 +6,8 @@ class ProductsController < ApplicationController
     # pagina actual que buscaremos en los params[:page], default 1 de primera pagina y de ahi en adelante el metodo next_page avanzara y navegaremos entre las pages de pagination recibiendo el current_page como argumento del link_to y navegar
     current_page = params[:page] ||= 1
     # agregamos el metodo paginate que recibe de parametros page: pagina actual y per_page: items a mostrar
-    @products = Product.where(visible: true).order('id DESC').paginate(page: current_page, per_page: 10)
+    # @products = Product.where(visible: true).order('id DESC').paginate(page: current_page, per_page: 10)
+    @products = Product.populars.paginate(page: current_page, per_page: 10)
   end
 
   def new
