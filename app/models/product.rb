@@ -66,7 +66,7 @@ irb(main):016>
 =end 
 
   # indicamos que product tiene muchos comentarios
-  has_many :comments
+  has_many :comments, -> { order('id DESC') } # esto para ordenar los comentarios
 
  # le indicamos a ActiveRecord que estamos aceptando atributos anidados de la realcion con :categories
   accepts_nested_attributes_for :categories
