@@ -65,6 +65,9 @@ irb(main):015> product.categories << last_category
 irb(main):016> 
 =end 
 
+  # indicamos que product tiene muchos comentarios
+  has_many :comments
+
  # le indicamos a ActiveRecord que estamos aceptando atributos anidados de la realcion con :categories
   accepts_nested_attributes_for :categories
 
