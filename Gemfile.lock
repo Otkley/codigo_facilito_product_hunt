@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/ctran/annotate_models.git
+  revision: e60a66644e8a8ea5dccd6a398d31f22878233998
+  specs:
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -88,6 +96,10 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.12.0)
+    faker (3.2.2)
+      i18n (>= 1.8.11, < 2)
+    friendly_id (5.4.2)
+      activerecord (>= 4.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -211,6 +223,7 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (4.0.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.12)
@@ -219,9 +232,12 @@ PLATFORMS
   arm64-darwin-23
 
 DEPENDENCIES
+  annotate!
   bootsnap
   capybara
   debug
+  faker (~> 3.2, >= 3.2.2)
+  friendly_id (~> 5.4.0)
   importmap-rails
   jbuilder
   puma (~> 5.0)
@@ -235,6 +251,7 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
+  will_paginate (~> 4.0)
 
 RUBY VERSION
    ruby 3.1.2p20

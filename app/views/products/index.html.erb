@@ -1,0 +1,19 @@
+<section class="relative">
+  <div class="container px-4 mx-auto">
+    <div class="max-w-3xl mb-20 mx-auto text-center">
+      <h2 class="mt-8 mb-10 text-4xl font-semibold font-heading">Productos más populares 🦄</h2>
+    </div>
+    <div class="flex flex-wrap -m-3 mb-16">
+      <%# renderizamos un parcial llamado product y con collection le decimos que por cada product que exista dentro de products, se llamara 1 parcial. 1 parcial por c/u. ej: como tarjetas. Y dentro del parcial tenemos el objeto product %>
+      <%= render partial: 'product', collection: @products %>
+    </div>
+    <div class="text-center">
+      <%# preguntamos si hay una siguiente pagina o es la ultima %>
+      <% if @products.next_page.present? %>
+        <%# un boton link_to pasandole de path el next page de products y si es la ultima ya no se mostrara %>
+        <%# aqui @products ya viene filtrado con pagination y este trae el metodo next_page ya que ya vienen las pages armadas por pagination %>
+        <%= link_to 'Ver mas productos', products_path(page: @products.next_page), class:"mb-4 px-6 py-4 text-sm text-white font-semibold bg-red-400 hover:bg-red-300 rounded transition duration-200"%>
+      <% end %>
+    </div>
+  </div>
+</section>

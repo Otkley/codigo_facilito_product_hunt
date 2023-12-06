@@ -1,0 +1,11 @@
+<section>
+  <%# la variable flash es la que tendra todos los mensajes que vienen del controlador %>
+  <%# <% flash.each do |type, msg| - para iterar los mensajes en el flash %>
+  <%# al utilizar each_with_index msg contiene dentro: typo y msg, e i el indice %>
+  <%# hacemos esto para poder identificar cada boton de su mensaje con su indice %>
+  <%# ya que pueden ser n mensajes dentro del flash y cada boton debe ser de su mensaje %>
+  
+  <% flash.each_with_index do |message, i| %>
+    <%= render partial: 'partials/message', locals: {message: message[1], index: i} %>
+  <% end %>
+</section>
